@@ -14,7 +14,7 @@ import { Tutorial } from './components/Tutorial';
 import { CheatPanel } from './components/CheatPanel';
 import { SurvivalStatsComponent } from './components/SurvivalStats';
 import { FloatingText, ScreenShake } from './components/VisualEffects';
-import { Shield, Package, User, Play, RotateCcw, Brain, Crown, Trophy, Book, BarChart3, Settings, Island } from 'lucide-react';
+import { Shield, Package, User, Play, RotateCcw, Brain, Crown, Trophy, Book, BarChart3, Settings, Hand as Island } from 'lucide-react';
 
 type GameView = 'stats' | 'shop' | 'inventory' | 'research' | 'survival';
 type ModalView = 'achievements' | 'collection' | 'statistics' | 'gameMode' | 'pokyegMarket' | 'tutorial' | 'cheats' | null;
