@@ -8,171 +8,213 @@ export interface TriviaQuestion {
 }
 
 export const triviaQuestions: TriviaQuestion[] = [
-  // Easy Questions
+  // Survival & Nature Questions
   {
     id: '1',
-    question: 'What is the capital of France?',
-    options: ['London', 'Berlin', 'Paris', 'Madrid'],
-    correctAnswer: 2,
-    category: 'Geography',
+    question: 'What is the most important survival priority?',
+    options: ['Food', 'Water', 'Shelter', 'Fire'],
+    correctAnswer: 1,
+    category: 'Survival',
     difficulty: 'easy'
   },
   {
     id: '2',
-    question: 'How many legs does a spider have?',
-    options: ['6', '8', '10', '12'],
+    question: 'How many days can a human survive without water?',
+    options: ['1-2 days', '3-5 days', '7-10 days', '2 weeks'],
     correctAnswer: 1,
-    category: 'Science',
+    category: 'Survival',
     difficulty: 'easy'
   },
   {
     id: '3',
-    question: 'What color do you get when you mix red and blue?',
-    options: ['Green', 'Yellow', 'Purple', 'Orange'],
-    correctAnswer: 2,
-    category: 'Art',
+    question: 'Which plant part is usually safe to eat?',
+    options: ['Berries', 'Leaves', 'Roots', 'Fruits'],
+    correctAnswer: 3,
+    category: 'Nature',
     difficulty: 'easy'
   },
   {
     id: '4',
-    question: 'Which planet is closest to the Sun?',
-    options: ['Venus', 'Earth', 'Mercury', 'Mars'],
-    correctAnswer: 2,
-    category: 'Science',
+    question: 'What should you do if you encounter a wild animal?',
+    options: ['Run away quickly', 'Make yourself look bigger', 'Play dead', 'Make loud noises'],
+    correctAnswer: 1,
+    category: 'Survival',
     difficulty: 'easy'
   },
   {
     id: '5',
-    question: 'What is 5 + 7?',
-    options: ['11', '12', '13', '14'],
-    correctAnswer: 1,
-    category: 'Math',
-    difficulty: 'easy'
+    question: 'Which direction does moss typically grow on trees?',
+    options: ['North side', 'South side', 'East side', 'All sides equally'],
+    correctAnswer: 3,
+    category: 'Nature',
+    difficulty: 'medium'
   },
 
-  // Medium Questions
+  // Island & Geography
   {
     id: '6',
-    question: 'Who wrote "Romeo and Juliet"?',
-    options: ['Charles Dickens', 'William Shakespeare', 'Jane Austen', 'Mark Twain'],
-    correctAnswer: 1,
-    category: 'Literature',
+    question: 'What type of rock is best for making tools?',
+    options: ['Granite', 'Limestone', 'Flint', 'Marble'],
+    correctAnswer: 2,
+    category: 'Geology',
     difficulty: 'medium'
   },
   {
     id: '7',
-    question: 'What is the chemical symbol for gold?',
-    options: ['Go', 'Gd', 'Au', 'Ag'],
-    correctAnswer: 2,
-    category: 'Science',
-    difficulty: 'medium'
+    question: 'Which tree produces coconuts?',
+    options: ['Palm tree', 'Oak tree', 'Pine tree', 'Maple tree'],
+    correctAnswer: 0,
+    category: 'Nature',
+    difficulty: 'easy'
   },
   {
     id: '8',
-    question: 'In which year did World War II end?',
-    options: ['1944', '1945', '1946', '1947'],
+    question: 'What causes tides in the ocean?',
+    options: ['Wind', 'Moon\'s gravity', 'Earth\'s rotation', 'Temperature'],
     correctAnswer: 1,
-    category: 'History',
+    category: 'Science',
     difficulty: 'medium'
   },
   {
     id: '9',
-    question: 'What is the square root of 64?',
-    options: ['6', '7', '8', '9'],
-    correctAnswer: 2,
-    category: 'Math',
-    difficulty: 'medium'
+    question: 'Which signal is internationally recognized for distress?',
+    options: ['SOS', 'HELP', 'MAYDAY', 'EMERGENCY'],
+    correctAnswer: 0,
+    category: 'Survival',
+    difficulty: 'easy'
   },
   {
     id: '10',
-    question: 'Which ocean is the largest?',
-    options: ['Atlantic', 'Indian', 'Arctic', 'Pacific'],
-    correctAnswer: 3,
-    category: 'Geography',
+    question: 'What is the best way to purify water in the wild?',
+    options: ['Let it sit', 'Boiling', 'Filtering through cloth', 'Adding salt'],
+    correctAnswer: 1,
+    category: 'Survival',
     difficulty: 'medium'
   },
 
-  // Hard Questions
+  // Animals & Creatures
   {
     id: '11',
-    question: 'What is the powerhouse of the cell?',
-    options: ['Nucleus', 'Ribosome', 'Mitochondria', 'Endoplasmic Reticulum'],
-    correctAnswer: 2,
-    category: 'Science',
-    difficulty: 'hard'
+    question: 'Which animal is known as the apex predator of the ocean?',
+    options: ['Whale', 'Shark', 'Octopus', 'Barracuda'],
+    correctAnswer: 1,
+    category: 'Animals',
+    difficulty: 'easy'
   },
   {
     id: '12',
-    question: 'Who painted "The Starry Night"?',
-    options: ['Pablo Picasso', 'Vincent van Gogh', 'Leonardo da Vinci', 'Claude Monet'],
-    correctAnswer: 1,
-    category: 'Art',
-    difficulty: 'hard'
+    question: 'What do you call a group of wolves?',
+    options: ['Herd', 'Flock', 'Pack', 'Pride'],
+    correctAnswer: 2,
+    category: 'Animals',
+    difficulty: 'medium'
   },
   {
     id: '13',
-    question: 'What is the derivative of x²?',
-    options: ['x', '2x', 'x²', '2x²'],
-    correctAnswer: 1,
-    category: 'Math',
+    question: 'Which snake is the most venomous in the world?',
+    options: ['King Cobra', 'Black Mamba', 'Inland Taipan', 'Rattlesnake'],
+    correctAnswer: 2,
+    category: 'Animals',
     difficulty: 'hard'
   },
   {
     id: '14',
-    question: 'Which programming language was created by Brendan Eich?',
-    options: ['Python', 'Java', 'JavaScript', 'C++'],
-    correctAnswer: 2,
-    category: 'Technology',
+    question: 'How do you identify if a spider is venomous?',
+    options: ['By its size', 'By its color', 'By its web pattern', 'You cannot tell easily'],
+    correctAnswer: 3,
+    category: 'Animals',
     difficulty: 'hard'
   },
   {
     id: '15',
-    question: 'What is the longest river in the world?',
-    options: ['Amazon River', 'Nile River', 'Yangtze River', 'Mississippi River'],
+    question: 'Which bird is known for its excellent navigation skills?',
+    options: ['Eagle', 'Pigeon', 'Owl', 'Sparrow'],
     correctAnswer: 1,
-    category: 'Geography',
-    difficulty: 'hard'
+    category: 'Animals',
+    difficulty: 'medium'
   },
 
-  // Additional questions for variety
+  // Crafting & Tools
   {
     id: '16',
-    question: 'How many minutes are in a full day?',
-    options: ['1440', '1400', '1480', '1420'],
-    correctAnswer: 0,
-    category: 'Math',
-    difficulty: 'medium'
+    question: 'What is the best material for starting a fire?',
+    options: ['Green leaves', 'Dry tinder', 'Wet wood', 'Sand'],
+    correctAnswer: 1,
+    category: 'Survival',
+    difficulty: 'easy'
   },
   {
     id: '17',
-    question: 'What gas do plants absorb from the atmosphere?',
-    options: ['Oxygen', 'Nitrogen', 'Carbon Dioxide', 'Hydrogen'],
-    correctAnswer: 2,
-    category: 'Science',
-    difficulty: 'easy'
+    question: 'Which knot is best for securing a shelter?',
+    options: ['Square knot', 'Bowline', 'Slip knot', 'Granny knot'],
+    correctAnswer: 1,
+    category: 'Survival',
+    difficulty: 'medium'
   },
   {
     id: '18',
-    question: 'Which country invented pizza?',
-    options: ['France', 'Italy', 'Greece', 'Spain'],
+    question: 'What tool is most essential for survival?',
+    options: ['Axe', 'Knife', 'Rope', 'Compass'],
     correctAnswer: 1,
-    category: 'Culture',
-    difficulty: 'easy'
+    category: 'Survival',
+    difficulty: 'medium'
   },
   {
     id: '19',
-    question: 'What is the hardest natural substance on Earth?',
-    options: ['Gold', 'Iron', 'Diamond', 'Platinum'],
-    correctAnswer: 2,
-    category: 'Science',
+    question: 'How do you make a simple spear?',
+    options: ['Sharpen both ends', 'Attach stone to stick', 'Use only wood', 'Burn the tip'],
+    correctAnswer: 3,
+    category: 'Crafting',
     difficulty: 'medium'
   },
   {
     id: '20',
-    question: 'Who developed the theory of relativity?',
-    options: ['Isaac Newton', 'Albert Einstein', 'Galileo Galilei', 'Stephen Hawking'],
+    question: 'What is the strongest natural fiber for making rope?',
+    options: ['Grass', 'Bark', 'Vines', 'Animal sinew'],
+    correctAnswer: 3,
+    category: 'Crafting',
+    difficulty: 'hard'
+  },
+
+  // Weather & Environment
+  {
+    id: '21',
+    question: 'What weather sign indicates an approaching storm?',
+    options: ['Clear skies', 'Falling barometric pressure', 'Rising temperature', 'Calm winds'],
     correctAnswer: 1,
-    category: 'Science',
+    category: 'Weather',
+    difficulty: 'medium'
+  },
+  {
+    id: '22',
+    question: 'Which cloud type indicates fair weather?',
+    options: ['Cumulus', 'Stratus', 'Nimbus', 'Cirrus'],
+    correctAnswer: 0,
+    category: 'Weather',
+    difficulty: 'medium'
+  },
+  {
+    id: '23',
+    question: 'What should you do during a lightning storm?',
+    options: ['Stand under a tree', 'Stay in open areas', 'Seek low ground', 'Stay near water'],
+    correctAnswer: 2,
+    category: 'Safety',
+    difficulty: 'easy'
+  },
+  {
+    id: '24',
+    question: 'How can you predict weather using nature?',
+    options: ['Animal behavior', 'Plant growth', 'Rock color', 'Soil texture'],
+    correctAnswer: 0,
+    category: 'Nature',
+    difficulty: 'medium'
+  },
+  {
+    id: '25',
+    question: 'What causes fog to form?',
+    options: ['Hot air', 'Cold air meeting warm ground', 'High winds', 'Low humidity'],
+    correctAnswer: 1,
+    category: 'Weather',
     difficulty: 'hard'
   }
 ];
@@ -189,15 +231,15 @@ export const getRandomQuestion = (difficulty?: 'easy' | 'medium' | 'hard'): Triv
 };
 
 export const getQuestionByZone = (zone: number): TriviaQuestion => {
-  // Easy questions for zones 1-3
+  // Easy questions for zones 1-3 (learning basics)
   if (zone <= 3) {
     return getRandomQuestion('easy');
   }
-  // Medium questions for zones 4-7
+  // Medium questions for zones 4-7 (getting experienced)
   else if (zone <= 7) {
     return getRandomQuestion('medium');
   }
-  // Hard questions for zones 8+
+  // Hard questions for zones 8+ (survival expert)
   else {
     return getRandomQuestion('hard');
   }

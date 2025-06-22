@@ -12,10 +12,11 @@ import { GameModeSelector } from './components/GameModeSelector';
 import { PokyegMarket } from './components/PokyegMarket';
 import { Tutorial } from './components/Tutorial';
 import { CheatPanel } from './components/CheatPanel';
+import { SurvivalStatsComponent } from './components/SurvivalStats';
 import { FloatingText, ScreenShake } from './components/VisualEffects';
-import { Shield, Package, User, Play, RotateCcw, Brain, Crown, Trophy, Book, BarChart3, Settings } from 'lucide-react';
+import { Shield, Package, User, Play, RotateCcw, Brain, Crown, Trophy, Book, BarChart3, Settings, Island } from 'lucide-react';
 
-type GameView = 'stats' | 'shop' | 'inventory' | 'research';
+type GameView = 'stats' | 'shop' | 'inventory' | 'research' | 'survival';
 type ModalView = 'achievements' | 'collection' | 'statistics' | 'gameMode' | 'pokyegMarket' | 'tutorial' | 'cheats' | null;
 
 function App() {
@@ -46,17 +47,17 @@ function App() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-green-900 via-blue-900 to-slate-900 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin inline-block w-12 h-12 border-4 border-purple-400 border-t-transparent rounded-full mb-4"></div>
-          <p className="text-white text-xl font-semibold">Loading Hugoland...</p>
+          <div className="animate-spin inline-block w-12 h-12 border-4 border-green-400 border-t-transparent rounded-full mb-4"></div>
+          <p className="text-white text-xl font-semibold">Loading Island Survivor...</p>
         </div>
       </div>
     );
   }
 
   const handleFooterClick = (type: 'tutorial' | 'cheats') => {
-    console.log('Footer clicked:', type); // Debug log
+    console.log('Footer clicked:', type);
     setCurrentModal(type);
   };
 
@@ -86,18 +87,18 @@ function App() {
               gems={gameState.gems}
             />
             
-            {/* AFK Gem Info */}
-            <div className="bg-gradient-to-r from-purple-900 to-indigo-900 p-4 rounded-lg border border-purple-500/50">
+            {/* Survival Tips */}
+            <div className="bg-gradient-to-r from-green-900 to-blue-900 p-4 rounded-lg border border-green-500/50">
               <div className="text-center">
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-2xl">💎</span>
-                  <h3 className="text-purple-400 font-bold text-lg">AFK Gem Mining</h3>
+                  <span className="text-2xl">🏝️</span>
+                  <h3 className="text-green-400 font-bold text-lg">Island Survival</h3>
                 </div>
                 <p className="text-white text-sm">
-                  Earn 2 gems every minute while the game is open!
+                  You are the sole survivor of a plane crash on a mysterious island!
                 </p>
-                <p className="text-purple-300 text-sm">
-                  Keep Hugoland running to passively collect gems
+                <p className="text-green-300 text-sm">
+                  Use your knowledge to survive against the island's dangerous creatures
                 </p>
               </div>
             </div>
@@ -107,14 +108,14 @@ function App() {
               <div className="bg-gradient-to-r from-yellow-900 to-orange-900 p-4 rounded-lg border border-yellow-500/50">
                 <div className="text-center">
                   <div className="flex items-center justify-center gap-2 mb-2">
-                    <span className="text-2xl">🔥</span>
-                    <h3 className="text-yellow-400 font-bold text-lg">Knowledge Streak!</h3>
+                    <span className="text-2xl">🧠</span>
+                    <h3 className="text-yellow-400 font-bold text-lg">Survival Instinct!</h3>
                   </div>
                   <p className="text-white text-sm">
-                    {gameState.knowledgeStreak.current} correct answers in a row
+                    {gameState.knowledgeStreak.current} correct survival decisions in a row
                   </p>
                   <p className="text-yellow-300 text-sm">
-                    +{Math.round((gameState.knowledgeStreak.multiplier - 1) * 100)}% reward bonus
+                    +{Math.round((gameState.knowledgeStreak.multiplier - 1) * 100)}% resource bonus
                   </p>
                 </div>
               </div>
@@ -131,12 +132,12 @@ function App() {
                 }`}
               >
                 <Play className="w-5 h-5 sm:w-6 sm:h-6" />
-                {gameState.playerStats.hp <= 0 ? 'You are defeated!' : 'Start Adventure'}
+                {gameState.playerStats.hp <= 0 ? 'You are too weak!' : 'Explore Island'}
               </button>
               
               {gameState.playerStats.hp <= 0 && (
                 <p className="text-red-400 mt-2 text-sm">
-                  Visit the shop to get better equipment and try again!
+                  Find supplies and craft better equipment to survive!
                 </p>
               )}
               
@@ -144,10 +145,10 @@ function App() {
                 <div className="bg-gradient-to-r from-yellow-600 to-yellow-500 p-3 rounded-lg">
                   <div className="flex items-center justify-center gap-2">
                     <Crown className="w-5 h-5 text-white" />
-                    <span className="text-white font-bold">🎉 PREMIUM MEMBER UNLOCKED! 🎉</span>
+                    <span className="text-white font-bold">🎉 ISLAND MASTER! 🎉</span>
                   </div>
                   <p className="text-yellow-100 text-sm mt-1">
-                    You've reached Zone 50! Enjoy exclusive rewards and special features!
+                    You've reached Zone 50! You've mastered island survival!
                   </p>
                 </div>
               )}
@@ -158,7 +159,7 @@ function App() {
                   className="px-4 py-2 rounded-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 transition-all duration-200 flex items-center gap-2 text-sm"
                 >
                   <Settings className="w-4 h-4" />
-                  Game Mode
+                  Survival Mode
                 </button>
                 
                 <button
@@ -166,11 +167,18 @@ function App() {
                   className="px-4 py-2 rounded-lg font-semibold text-white bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 transition-all duration-200 flex items-center gap-2 text-sm"
                 >
                   <RotateCcw className="w-4 h-4" />
-                  Reset Game
+                  New Crash
                 </button>
               </div>
             </div>
           </div>
+        );
+      case 'survival':
+        return (
+          <SurvivalStatsComponent
+            survivalStats={gameState.survivalStats}
+            dayNightCycle={gameState.dayNightCycle}
+          />
         );
       case 'shop':
         return <Shop coins={gameState.coins} onOpenChest={openChest} isPremium={gameState.isPremium} />;
@@ -265,7 +273,7 @@ function App() {
   const unlockedAchievements = gameState.achievements.filter(a => a.unlocked).length;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-green-900 via-blue-900 to-slate-900">
       {/* Visual Effects */}
       {visualEffects.showFloatingText && (
         <FloatingText
@@ -282,11 +290,11 @@ function App() {
       )}
 
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-800 via-violet-800 to-purple-800 shadow-2xl">
+      <div className="bg-gradient-to-r from-green-800 via-blue-800 to-green-800 shadow-2xl">
         <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-6">
           <div className="flex items-center justify-center gap-2 mb-4 sm:mb-6">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center">
-              🏰 Hugoland 🗡️
+              🏝️ Island Survivor ✈️
             </h1>
             {gameState.isPremium && (
               <Crown className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400 animate-pulse" />
@@ -323,10 +331,11 @@ function App() {
           {/* Navigation */}
           <nav className="flex justify-center space-x-1 sm:space-x-2 overflow-x-auto pb-2">
             {[
-              { id: 'stats', label: 'Hero', icon: User },
-              { id: 'research', label: 'Research', icon: Brain },
-              { id: 'shop', label: 'Shop', icon: Package },
-              { id: 'inventory', label: 'Inventory', icon: Shield },
+              { id: 'stats', label: 'Survivor', icon: User },
+              { id: 'survival', label: 'Island', icon: Island },
+              { id: 'research', label: 'Knowledge', icon: Brain },
+              { id: 'shop', label: 'Salvage', icon: Package },
+              { id: 'inventory', label: 'Gear', icon: Shield },
             ].map(({ id, label, icon: Icon }) => (
               <button
                 key={id}
@@ -334,10 +343,10 @@ function App() {
                 disabled={gameState.inCombat}
                 className={`px-2 sm:px-4 py-2 rounded-lg font-semibold transition-all duration-200 flex items-center gap-1 sm:gap-2 text-xs sm:text-sm whitespace-nowrap ${
                   currentView === id
-                    ? 'bg-white text-purple-800 shadow-lg'
+                    ? 'bg-white text-green-800 shadow-lg'
                     : gameState.inCombat
                     ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
-                    : 'bg-purple-700 text-white hover:bg-purple-600 hover:scale-105'
+                    : 'bg-green-700 text-white hover:bg-green-600 hover:scale-105'
                 }`}
               >
                 <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -364,23 +373,23 @@ function App() {
             e.stopPropagation();
             handleFooterClick('tutorial');
           }}
-          className="text-gray-400 hover:text-purple-400 transition-colors cursor-pointer underline decoration-dotted font-semibold"
+          className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer underline decoration-dotted font-semibold"
         >
-          Hugoland
+          Island Survivor
         </button>
-        {' '}- Where knowledge meets{' '}
+        {' '}- Where survival meets{' '}
         <button
           onClick={() => setCurrentModal('pokyegMarket')}
           className="text-gray-400 hover:text-red-400 transition-colors cursor-pointer underline decoration-dotted"
         >
-          power
+          knowledge
         </button>
         ! 
-        {gameState.isPremium && <span className="text-yellow-400 ml-2">👑 Premium Member</span>}
+        {gameState.isPremium && <span className="text-yellow-400 ml-2">👑 Island Master</span>}
         {gameState.knowledgeStreak.current > 0 && (
-          <span className="text-yellow-400 ml-2">🔥 {gameState.knowledgeStreak.current} Streak</span>
+          <span className="text-yellow-400 ml-2">🧠 {gameState.knowledgeStreak.current} Streak</span>
         )}
-        <span className="text-purple-400 ml-2">Mode: {gameState.gameMode.current.toUpperCase()}</span>
+        <span className="text-green-400 ml-2">Mode: {gameState.gameMode.current.toUpperCase()}</span>
       </div>
 
       {/* Modals */}
